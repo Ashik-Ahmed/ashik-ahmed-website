@@ -2,6 +2,9 @@ import Link from 'next/link';
 import React from 'react';
 import Logo from '../Logo/Logo';
 import { useRouter } from 'next/router';
+import { TwitterIcon, DribbbleIcon, GithubIcon, LinkedInIcon, PinterestIcon } from '../Icons/Icons';
+import { motion } from 'framer-motion'
+
 
 const CustomLink = ({ href, title, className = '' }) => {
 
@@ -25,12 +28,37 @@ const Navbar = () => {
                 <CustomLink href='/articles' title='Articles' className='mx-4' />
             </nav>
 
-            <nav>
-                <Link href='/' target='_blank'>T</Link>
-                <Link href='/' target='_blank'>T</Link>
-                <Link href='/' target='_blank'>T</Link>
-                <Link href='/' target='_blank'>T</Link>
-                <Link href='/' target='_blank'>T</Link>
+            <nav className='flex items-center justify-center flex-wrap'>
+                <motion.a href='https://twitter.com' target='_blank'
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className='w-6 mr-2'>
+                    <TwitterIcon />
+                </motion.a>
+                <motion.a href='/https://twitter.com' target='_blank'
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className='w-6 mr-2'>
+                    <GithubIcon />
+                </motion.a>
+                <motion.a href='/' target='_blank'
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className='w-6 mr-2'>
+                    <LinkedInIcon />
+                </motion.a>
+                <motion.a href='/' target='_blank'
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className='w-6 mr-2'>
+                    <PinterestIcon />
+                </motion.a>
+                <motion.a href='/' target='_blank'
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className='w-6 mr-2'>
+                    <DribbbleIcon />
+                </motion.a>
             </nav>
             <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
                 <Logo />

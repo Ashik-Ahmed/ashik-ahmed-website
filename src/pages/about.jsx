@@ -7,6 +7,7 @@ import profilePic from '../../public/images/profile/developer-pic-2.jpg'
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
 import Skills from '@/Components/Skills/Skills';
 import Experience from '@/Components/Experience/Experience';
+import Education from '@/Components/Education/Education';
 
 const AnimatedMumbers = ({ value }) => {
 
@@ -86,6 +87,7 @@ const about = () => {
 
                     <Skills />
                     <Experience />
+                    <Education />
                 </Layout>
             </main>
         </>

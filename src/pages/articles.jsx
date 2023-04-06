@@ -12,7 +12,8 @@ const FramerImage = motion(Image)
 
 const FeaturedArticle = ({ img, title, time, summary, link }) => {
     return (
-        <li className='col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl'>
+        <li className='col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl relative'>
+            <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl' />
             <Link href={link} target='_blank' className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
                 <FramerImage src={img} alt={title} className='w-full h-auto'
                     whileHover={{ scale: 1.05 }}

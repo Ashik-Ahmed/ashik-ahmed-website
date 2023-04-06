@@ -10,6 +10,15 @@ import { motion } from 'framer-motion'
 
 const FramerImage = motion(Image)
 
+const Article = ({ img, title, date, link }) => {
+    return (
+        <li>
+            <h2>{title}</h2>
+            <span>{date}</span>
+        </li>
+    )
+}
+
 const FeaturedArticle = ({ img, title, time, summary, link }) => {
     return (
         <li className='col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl relative'>
@@ -21,7 +30,7 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
                 />
             </Link>
             <Link href={link} target='_blank'>
-                <h2 className='capitalize text-2xl font-bold my-2 hover:underline'>{title}</h2>
+                <h2 className='capitalize text-2xl font-bold my-2 mt-4 hover:underline'>{title}</h2>
                 <p className='text-sm mb-2 '>{summary}</p>
                 <span className='text-primary font-semibold'>{time}</span>
             </Link>
@@ -58,6 +67,7 @@ const articles = () => {
                             img={article2}
                         />
                     </ul>
+                    <h2 className='font-bold text-4xl w-full text-center my-16 mt-32'>All Articles</h2>
                 </Layout>
             </main>
         </>

@@ -3,25 +3,43 @@ import Layout from '@/Components/Layout/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useRef } from 'react';
 import article1 from '../../public/images/articles/pagination component in reactjs.jpg'
 import article2 from '../../public/images/articles/create loading screen in react js.jpg'
 import article3 from '../../public/images/articles/form validation in reactjs using custom react hook.png'
-import { motion } from 'framer-motion'
+import { motion, useMotionValue } from 'framer-motion'
 
 const FramerImage = motion(Image)
 
 const MovingImg = ({ title, img, link }) => {
+
+    const x = useMotionValue(0)
+    const y = useMotionValue(0)
+    const imgRef = useRef(null)
+
+    function handleMouse(event) {
+        console.log(event.pageX);
+    }
+    function handleMouseLeave(event) {
+        console.log(event.pageX);
+    }
+
     return (
-        <Link href={link} target='_blank'>
+        <Link href={link} target='_blank'
+            onMouseMove={handleMouse}
+            onMouseLeave={handleMouseLeave}
+        >
             <h2 className='capitalize text-xl font-semibold hover:underline '>{title}</h2>
+            <Image ref={imgRef} src={img} alt={title} className='w-96 h-auto hidden aboslute rounded-lg' />
         </Link>
     )
 }
 
 const Article = ({ img, title, date, link }) => {
+
     return (
         <li className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid  border-dark border-r-4 border-b-4'>
+            <MovingImg title={title} img={img} link={link} />
             <span className='text-primary font-semibold pl-4'>{date}</span>
         </li>
     )

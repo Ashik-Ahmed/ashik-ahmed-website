@@ -34,7 +34,11 @@ const MovingImg = ({ title, img, link }) => {
             onMouseLeave={handleMouseLeave}
         >
             <h2 className='capitalize text-xl font-semibold hover:underline '>{title}</h2>
-            <Image ref={imgRef} src={img} alt={title} className='w-96 h-auto hidden aboslute rounded-lg' />
+            <FramerImage
+                style={{ x: x, y: y }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 0.2 } }}
+                ref={imgRef} src={img} alt={title} className='z-10 w-96 h-auto hidden absolute rounded-lg' />
         </Link>
     )
 }
@@ -42,10 +46,14 @@ const MovingImg = ({ title, img, link }) => {
 const Article = ({ img, title, date, link }) => {
 
     return (
-        <li className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid  border-dark border-r-4 border-b-4'>
+        <motion.li
+            initial={{ y: 150 }}
+            whileInView={{ y: 0, transition: { duration: 0.5, ease: 'easeInOut' } }}
+            viewport={{ once: true }}
+            className='relative w-full p-4 py-6 my-4 rounded-xl flex items-center justify-between bg-light text-dark first:mt-0 border border-solid  border-dark border-r-4 border-b-4'>
             <MovingImg title={title} img={img} link={link} />
             <span className='text-primary font-semibold pl-4'>{date}</span>
-        </li>
+        </motion.li>
     )
 }
 
@@ -54,7 +62,9 @@ const FeaturedArticle = ({ img, title, time, summary, link }) => {
         <li className='col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl relative'>
             <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl' />
             <Link href={link} target='_blank' className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'>
-                <FramerImage src={img} alt={title} className='w-full h-auto'
+                <FramerImage
+                    src={img} alt={title}
+                    className='w-full h-auto'
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                 />

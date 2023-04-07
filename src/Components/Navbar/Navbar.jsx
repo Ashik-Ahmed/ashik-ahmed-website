@@ -55,7 +55,7 @@ const Navbar = () => {
                     whileHover={{ y: -2 }}
                     whileTap={{ scale: 0.9 }}
                     className='w-6 mx-3'>
-                    <PinterestIcon />
+                    <PinterestIcon className=' bg-light rounded-full' />
                 </motion.a>
                 <motion.a href='/' target='_blank'
                     whileHover={{ y: -2 }}

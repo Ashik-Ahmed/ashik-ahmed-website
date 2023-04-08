@@ -29,7 +29,7 @@ const CustomMobileLink = ({ href, title, className = '', toggle }) => {
     }
 
     return (
-        <button onClick={handleClick} href={href} className={`${className} relative group`}>
+        <button onClick={handleClick} href={href} className={`${className} relative group text-light dark:text-dark`}>
             {title}
             <span className={`h-[2px] inline-block bg-dark absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300 ${router.asPath === href ? 'w-full' : 'w-0'} dark:bg-light`}>&nbsp;</span>
         </button>
@@ -112,10 +112,10 @@ const Navbar = () => {
                 isOpen ?
                     <div className='min-w-[70vw] flex flex-col  justify-between z-30 items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark/90 dark:bg-light/75 rounded-lg backdrop-blur-md py-32'>
                         <nav className='flex items-center flex-col justify-center'>
-                            <CustomMobileLink href='/' title='Home' className='mr-4' toggle={handleClick} />
-                            <CustomMobileLink href='/about' title='About' className='mx-4' toggle={handleClick} />
-                            <CustomMobileLink href='/projects' title='Projects' className='mx-4' toggle={handleClick} />
-                            <CustomMobileLink href='/articles' title='Articles' className='mx-4' toggle={handleClick} />
+                            <CustomMobileLink href='/' title='Home' className='' toggle={handleClick} />
+                            <CustomMobileLink href='/about' title='About' className='' toggle={handleClick} />
+                            <CustomMobileLink href='/projects' title='Projects' className='' toggle={handleClick} />
+                            <CustomMobileLink href='/articles' title='Articles' className='' toggle={handleClick} />
                         </nav>
 
                         <nav className='flex items-center justify-center flex-wrap'>

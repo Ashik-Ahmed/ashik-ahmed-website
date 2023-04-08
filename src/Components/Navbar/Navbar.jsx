@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../Logo/Logo';
 import { useRouter } from 'next/router';
 import { TwitterIcon, DribbbleIcon, GithubIcon, LinkedInIcon, PinterestIcon, SunIcon, MoonIcon } from '../Icons/Icons';
@@ -22,9 +22,21 @@ const CustomLink = ({ href, title, className = '' }) => {
 const Navbar = () => {
 
     const [mode, setMode] = useThemeSwitcher()
+    const [isOpen, setIsOpen] = useState(false)
+
+    const handleClick = () => {
+        setIsOpen(!isOpen)
+    }
 
     return (
         <header className='w-full px-32 py-8 font-medium flex items-center justify-between dark:text-light'>
+
+            <button className='flex flex-col items-center justify-center' onClick={handleClick}>
+                <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
+                <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
+            </button>
+
             <nav>
                 <CustomLink href='/' title='Home' className='mr-4' />
                 <CustomLink href='/about' title='About' className='mx-4' />

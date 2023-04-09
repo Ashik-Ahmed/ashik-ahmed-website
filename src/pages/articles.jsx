@@ -8,6 +8,7 @@ import article1 from '../../public/images/articles/pagination component in react
 import article2 from '../../public/images/articles/create loading screen in react js.jpg'
 import article3 from '../../public/images/articles/form validation in reactjs using custom react hook.png'
 import { motion, useMotionValue } from 'framer-motion'
+import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect';
 
 const FramerImage = motion(Image)
 
@@ -89,6 +90,8 @@ const articles = () => {
                 <title>Ashik Ahmed | Articles Page</title>
                 <meta name='description' content='ashik ahmed web developer. ashik ahmed full-stack developer. ashik daffodil'></meta>
             </Head>
+
+            <TransitionEffect />
 
             <main className='w-full mb-16 flex flex-col items-center justify-center overflow-hidden dark:text-light'>
                 <Layout className='pt-16'>

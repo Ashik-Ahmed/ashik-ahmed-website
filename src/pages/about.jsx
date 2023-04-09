@@ -8,6 +8,7 @@ import { useInView, useMotionValue, useSpring } from 'framer-motion';
 import Skills from '@/Components/Skills/Skills';
 import Experience from '@/Components/Experience/Experience';
 import Education from '@/Components/Education/Education';
+import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect';
 
 const AnimatedMumbers = ({ value }) => {
 
@@ -41,6 +42,8 @@ const about = () => {
                 <title>Ashik Ahmed | About Page</title>
                 <meta name='description' content='ashik ahmed web developer. ashik ahmed full-stack developer. ashik daffodil'></meta>
             </Head>
+
+            <TransitionEffect />
             <main className='flex flex-col items-center justify-center w-full dark:text-light'>
                 <Layout className='pt-16'>
                     <AnimatedText text='Passion Fuels Purpose!' className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />

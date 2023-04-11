@@ -55,6 +55,26 @@ export const LinkedInIcon = ({ className, ...rest }) => (
     </svg>
 );
 
+export const FacebookIcon = ({ className, ...rest }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="512"
+        height="512"
+        fillRule="evenodd"
+        clipRule="evenodd"
+        imageRendering="optimizeQuality"
+        shapeRendering="geometricPrecision"
+        textRendering="geometricPrecision"
+        {...rest}
+        className={`w-full h-auto ${className}`}
+    >
+        <path
+            fill="#3a559f"
+            d="M-.5-.5h512v512h-159v-198c22.01.333 44.01 0 66-1l11-78a1483 1483 0 00-77-1c-.167-21.003 0-42.003.5-63 3.071-10.738 9.904-17.904 20.5-21.5 18.997-.5 37.997-.667 57-.5v-72c-122.47-17.863-175.137 34.47-158 157h-67v80h67v198H-.5V-.5z"
+        ></path>
+    </svg>
+)
+
 export const PinterestIcon = ({ className, ...rest }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"

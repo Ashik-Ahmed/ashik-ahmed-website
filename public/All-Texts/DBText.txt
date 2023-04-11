@@ -1,0 +1,92 @@
+1. Homepage:
+    title
+    description
+    {
+        title:"Transforming ideas into tangible results with the power of coding and design",
+        description:"As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects and articles, showcasing my expertise in web development.
+
+"
+    }
+
+2. About:
+    title
+    Biography
+    satisfied-clients
+    projects-completed
+    years-of-experience
+
+    {
+        title:"Full Stack Web Developer",
+        biography:
+            [
+                0:"Hi, I am a highly skilled MERN stack web developer with over one year of experience. Specializing in React, Next, Tailwind, HTML, CSS, Bootstrap, Nodejs, Expressjs, and Mongo DB, I am dedicated to creating responsive and dynamic web applications that meet clients' needs. With a passion for learning and staying up-to-date with the latest trends in web development, I am always exploring new technologies to improve the performance and functionality of web applications."
+
+                1:"In addition to expertise in web development, I also have extensive experience providing IT and networking support for clients. This unique background gives me a comprehensive understanding of the challenges businesses face in the digital age, enabling them to provide holistic solutions that go beyond just web development."
+
+                2:"As a web developer, I am committed to delivering exceptional results for clients. Whether working on large-scale projects or small websites, I always puts clients' needs first and ensures that every project meets their exact requirements."
+
+                3:"If you're looking for a talented and experienced web developer to create a responsive and dynamic web application that will improve your online presence, I am the perfect choice for you. Contact me today to discuss your web development needs."
+            ],
+            satisfiedClients:40,
+            projectsCompleted:24,
+            yearsOfExperience:3            
+    }
+
+    Skills:
+        [
+	{name='HTML5', x='-20vw', y='10vw'},
+	{name='CSS3', x='-29vw', y='0vw'},
+	{name='Tailwind', x='20vw', y='13vw'},
+	{name='NodeJS', x='0vw', y='-12vw'},
+	{name='NextJS', x='-22vw', y='-7vw'},
+	{name='ReactJS', x='-17vw', y='-15vw'},
+	{name='ExpressJS', x='17vw', y='-15vw'},
+	{name='Firebase', x='0vw', y='10vw'},
+	{name='JavaScript', x='0vw', y='-20vw'},
+	{name='MongoDB', x='22vw', y='-7vw'},
+	{name='Mongoose', x='29vw', y='0vw'},
+	]
+
+    Experience:
+        position, company, companyLink, time, address, work
+        [
+            {position: "Helpdesk Engineer", company:"Infozillion Teletech BD LTD.", companyLink:"https://www.infotelebd.com/", time:"2019-Present", address:"Dhaka, Bangladesh", work:"Infozillion Provides MNP service in Bangladesh. My responsibility is to provide technical support regarding MNP service to our stakeholders like all the Mobile Operators, IPTSP, IOF and many more. I have to monitor the MNP service through QAdmin portal and troubleshoot if any incident occurs. Also, I am responsible for internal office networking and basic linux server support."}
+        ]
+
+    Education:
+        type, time, place, info
+        [
+            {type:"Bachelor Of Science In Computer Science & Engineering", time:"2015-2019", place:"Daffodil Internation University", info:"Relevant courses included Data Structures and Algorithms, Computer Systems Engineering, and Artificial Intelligence."},
+
+            {type:"Higher Secondary", time:"2010-2012", place:"Cantonment Public School and College, Rangpur", info:"Science background subjects like Maths, Physics, Chemistry, Biology and English. Obtained the highest CGPA: 5.00 out of 5.00"},
+
+            {type:"Secondary School Certificate", time:"2008-2009", place:"Mirzapur High School, Mithapukur, Rangpur", info:"Completed from Science background and awarded for the outstanding performance in the board exam."},
+        ]
+
+3. Projects:
+
+    FeaturedProject:
+        type, title, summary, img, link, githubClient, githubServer
+
+        [
+            {type:"Featured Project", title:"Online Quiz Application", summary:"A feature rich Quiz App using Next.js, Tailwind CSS, Node.js, Express.js and MongoDB. Anyone can take place in the Quiz on different topics by registering an account. User who achieve 80% marks will get bonus points which can be used to retake any quiz. A line chart is available at the Dashboard to see the performance graph.", img:"https://i.ibb.co/6nFFTCy/quizzie-photo.png", link:"https://quizzie-d2205.web.app/", githubClient:"https://github.com/Ashik-Ahmed/quizzie", githubServer:"https://github.com/Ashik-Ahmed/quizzie-server"}
+        ]
+
+    Project:
+        title, type, img, link, githubClient, githubServer
+
+        [
+            {type:"Project", title:"Gear Up - Simple E-Commerce Application", img:"https://i.ibb.co/YWrbk9d/gear-up-photo.png", link:"https://gear-up-a7b20.web.app/", githubClient:"https://github.com/Ashik-Ahmed/gear-up-e-commerce", githubServer:"https://github.com/Ashik-Ahmed/gear-up-e-commerce-server"},
+            
+            {type:"Project", title:"ManageWare - Warehouse Management Software", img:"https://i.ibb.co/K97ktWg/manageware-photo.png", link:"https://manageware-40e96.web.app/", githubClient:"https://github.com/Ashik-Ahmed/manageware", githubServer:"https://github.com/Ashik-Ahmed/manageware-server"}
+        ]
+
+4. Articles:
+
+    FeaturedArticle:
+        img, title, time, summary, link
+    
+    Article:
+        img, title, date, link
+
+

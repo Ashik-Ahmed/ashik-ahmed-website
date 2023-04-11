@@ -35,11 +35,12 @@ const AnimatedMumbers = ({ value }) => {
     return <span ref={ref}></span>
 }
 
-const about = () => {
+const about = async () => {
+
     return (
         <>
             <Head>
-                <title>Ashik Ahmed | About Page</title>
+                <title>About | Ashik Ahmed</title>
                 <meta name='description' content='ashik ahmed web developer. ashik ahmed full-stack developer. ashik daffodil'></meta>
             </Head>
 

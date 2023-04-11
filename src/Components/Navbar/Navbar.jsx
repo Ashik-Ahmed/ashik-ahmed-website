@@ -63,12 +63,6 @@ const Navbar = () => {
                 </nav>
 
                 <nav className='flex items-center justify-center flex-wrap'>
-                    <motion.a href='https://twitter.com' target='_blank'
-                        whileHover={{ y: -2 }}
-                        whileTap={{ scale: 0.9 }}
-                        className='w-6 mx-3 sm:mx-1'>
-                        <TwitterIcon />
-                    </motion.a>
                     <motion.a href='/https://twitter.com' target='_blank'
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
@@ -81,7 +75,13 @@ const Navbar = () => {
                         className='w-6 mx-3 sm:mx-1'>
                         <LinkedInIcon />
                     </motion.a>
-                    <motion.a href='/' target='_blank'
+                    <motion.a href='https://twitter.com' target='_blank'
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.9 }}
+                        className='w-6 mx-3 sm:mx-1'>
+                        <TwitterIcon />
+                    </motion.a>
+                    {/* <motion.a href='/' target='_blank'
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
                         className='w-6 mx-3 sm:mx-1'>
@@ -92,7 +92,7 @@ const Navbar = () => {
                         whileTap={{ scale: 0.9 }}
                         className='w-6 ml-3'>
                         <DribbbleIcon />
-                    </motion.a>
+                    </motion.a> */}
 
                     <button onClick={() => setMode(mode == 'light' ? 'dark' : 'light')} className={`ml-3 flex items-center justify-center rounded-full p-1 ${mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
                         {
@@ -173,7 +173,7 @@ const Navbar = () => {
             <div className='absolute left-[50%] top-2 translate-x-[-50%]'>
                 <Logo />
             </div>
-        </header>
+        </header >
     );
 };
 

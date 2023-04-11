@@ -87,7 +87,7 @@ const articles = () => {
     return (
         <>
             <Head>
-                <title>Ashik Ahmed | Articles Page</title>
+                <title>Articles | Web development services</title>
                 <meta name='description' content='ashik ahmed web developer. ashik ahmed full-stack developer. ashik daffodil'></meta>
             </Head>
 

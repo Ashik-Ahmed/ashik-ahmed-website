@@ -1,11 +1,11 @@
 import { Schema, model, models } from 'mongoose';
 
-const homeSchema = new Schema({
+const homepageSchema = new Schema({
     title: String,
     description: String,
     resumeLink: String
 });
 
-const Home = models.Home || model('Home', homeSchema);
+const Homepage = models.Homepage || model('Homepage', homepageSchema);
 
-export default Home;
+export default Homepage;

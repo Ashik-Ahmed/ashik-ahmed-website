@@ -35,7 +35,7 @@ const AnimatedMumbers = ({ value }) => {
     return <span ref={ref}></span>
 }
 
-const about = async () => {
+const about = () => {
 
     return (
         <>

@@ -12,7 +12,7 @@ import Projects from '../../database/models/project.model';
 
 const FramerImage = motion(Image)
 
-const FeaturedProject = ({ type, title, summary, img, link, github }) => {
+const FeaturedProject = ({ type, title, summary, img, link, githubClient, githubServer }) => {
     return (
         <article className='w-full flex items-center justify-between rounded-br-2xl rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 relative dark:bg-dark dark:border-light lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4' >
             <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl dark:bg-light xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]' />
@@ -32,20 +32,26 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
                     <h2 className='my-2 w-full text-left text-3xl font-bold dark:text-light sm:text-sm'>{title}</h2>
                 </Link>
                 <p className='my-2 font-medium text-dark dark:text-light sm:text-sm'>{summary}</p>
-                <div className='mt-2 flex items-center '>
-                    <Link href={github} target='_blank' className='w-10'>
-                        <GithubIcon />
-                    </Link>
-                    <Link href={link} target='_blank' className='ml-4 rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:bg-light dark:text-dark sm:px-4 sm:text-base'>
+                <div className='w-full mt-2 flex items-center justify-between'>
+                    <Link href={link} target='_blank' className='rounded-lg bg-dark text-light p-2 px-6 text-lg font-semibold dark:bg-light dark:text-dark sm:px-4 sm:text-base'>
                         Visit Project
                     </Link>
+                    <div className='flex gap-2'>
+                        <Link href={githubClient} target='_blank' className='w-10'>
+                            <GithubIcon />
+                        </Link>
+                        <Link href={githubServer} target='_blank' className='w-10'>
+                            <GithubIcon />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </article>
     )
 }
 
-const Project = ({ title, type, img, link, github }) => {
+const Project = ({ title, type, img, link, githubClient, githubServer }) => {
+    console.log(title, type, img,);
     return (
         <article className='w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light xs:p-4'>
             <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2rem] bg-dark rounded-br-3xl dark:bg-light md:-right-2 md:w-[101%] sm:h-[102%] xs:radious-[1.5rem]' />
@@ -65,9 +71,14 @@ const Project = ({ title, type, img, link, github }) => {
                     <Link href={link} target='_blank' className='text-lg font-semibold underline md:text-base'>
                         Visit
                     </Link>
-                    <Link href={github} target='_blank' className='w-8 md:w-6'>
-                        <GithubIcon />
-                    </Link>
+                    <div className='flex gap-2'>
+                        <Link href={githubClient} target='_blank' className='w-8 md:w-6'>
+                            <GithubIcon />
+                        </Link>
+                        <Link href={githubServer} target='_blank' className='w-8 md:w-6'>
+                            <GithubIcon />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </article>
@@ -76,7 +87,9 @@ const Project = ({ title, type, img, link, github }) => {
 
 const projects = ({ projects }) => {
 
-    // console.log(projects);
+    const featuredProjects = projects.filter(project => project.type === 'Featured Project').map(project => project.projects)[0]
+    const regularProjects = projects.filter(project => project.type === 'Project').map(project => project.projects)[0]
+    console.log(featuredProjects);
 
     return (
         <>
@@ -89,20 +102,44 @@ const projects = ({ projects }) => {
 
             <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light'>
                 <Layout className='pt-16'>
-                    <AnimatedText text='Imagination Trumps Knowledge!' className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
+                    <AnimatedText text='Awesome Full Stack Projects!' className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
 
                     <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
-                        <div className='col-span-12 '>
-                            <FeaturedProject
-                                title="Online Quiz Application"
-                                img="https://i.ibb.co/6nFFTCy/quizzie-photo.png"
-                                summary=" A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
-                                link='/'
-                                github='/'
-                                type='Featured Project'
-                            />
-                        </div>
-                        <div className='col-span-6 sm:col-span-12'>
+                        {
+                            featuredProjects && featuredProjects.map((featuredProject) => {
+                                return (
+                                    <div key={featuredProject._id} className='col-span-12 '>
+                                        <FeaturedProject
+                                            title={featuredProject.title}
+                                            img={featuredProject.img}
+                                            summary={featuredProject.summary}
+                                            link={featuredProject.link}
+                                            githubClient={featuredProject.githubClient}
+                                            githubServer={featuredProject.githubServer}
+                                            type='Featured Project'
+                                        />
+                                    </div>
+                                )
+                            })
+                        }
+
+                        {
+                            regularProjects && regularProjects.map((regularProject) =>
+                                <div key={regularProject._id} className='col-span-6 sm:col-span-12'>
+                                    <Project
+                                        title={regularProject.title}
+                                        img={regularProject.img}
+                                        summary={regularProject.summary}
+                                        link={regularProject.link}
+                                        githubClient={regularProject.githubClient}
+                                        githubServer={regularProject.githubServer}
+                                        type='Regular Project'
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {/* <div className='col-span-6 sm:col-span-12'>
                             <Project
                                 title="Gear Up - Simple E-Commerce Application"
                                 img="https://i.ibb.co/YWrbk9d/gear-up-photo.png"
@@ -121,41 +158,11 @@ const projects = ({ projects }) => {
                                 github='/'
                                 type='Featured Project'
                             />
-                        </div>
-                        <div className='col-span-12 '>
-                            <FeaturedProject
-                                title="Crypto Screener Application"
-                                img={project1}
-                                summary=" A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
-                                link='/'
-                                github='/'
-                                type='Featured Project'
-                            />
-                        </div>
-                        <div className='col-span-6 sm:col-span-12'>
-                            <Project
-                                title="Crypto Screener Application"
-                                img={project1}
-                                summary=" A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
-                                link='/'
-                                github='/'
-                                type='Featured Project'
-                            />
-                        </div>
-                        <div className='col-span-6 sm:col-span-12'>
-                            <Project
-                                title="Crypto Screener Application"
-                                img={project1}
-                                summary=" A feature-rich Crypto Screener App using React, Tailwind CSS, Context API, React Router and Recharts. It shows detail regarding almost all the cryptocurrency. You can easily convert the price in your local currency."
-                                link='/'
-                                github='/'
-                                type='Featured Project'
-                            />
-                        </div>
+                        </div> */}
 
                     </div>
                 </Layout>
-            </main>
+            </main >
         </>
     );
 };

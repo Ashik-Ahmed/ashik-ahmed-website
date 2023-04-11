@@ -22,7 +22,7 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
     </li>
 }
 
-const Experience = () => {
+const Experience = ({ experiences }) => {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll(
         {
@@ -38,7 +38,20 @@ const Experience = () => {
                     style={{ scaleY: scrollYProgress }}
                     className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]' />
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
-                    <Details
+
+                    {
+                        experiences && experiences.map((experience, index) => <Details
+                            key={index}
+                            position={experience.position}
+                            company={experience.company}
+                            companyLink={experience.companyLink}
+                            time={experience.time}
+                            address={experience.address}
+                            work={experience.work}
+                        />)
+                    }
+
+                    {/* <Details
                         position='Software Engineer'
                         company='Google'
                         time='2022-Present'
@@ -82,7 +95,7 @@ const Experience = () => {
                         work="Worked on a team responsible for developing new features for Google's
                         search engine, including improving the accuracy and relevance of search results and
                         developing new tools for data analysis and visualization."
-                    />
+                    /> */}
                 </ul>
             </div>
         </div>

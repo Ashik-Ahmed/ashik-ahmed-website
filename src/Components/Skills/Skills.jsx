@@ -14,7 +14,7 @@ const Skill = ({ name, x, y }) => {
     )
 }
 
-const Skills = () => {
+const Skills = ({ skills }) => {
     return (
         <>
             <h2 className='font-bold text-7xl mt-64 w-full text-center md:text-5xl md:mt-32'>Skills</h2>
@@ -24,7 +24,10 @@ const Skills = () => {
                 >
                     Web
                 </motion.div>
-                <Skill name='HTML5' x='-20vw' y='10vw' />
+                {
+                    skills && skills.map((skill, index) => <Skill key={index} name={skill.name} x={skill.x} y={skill.y} />)
+                }
+                {/* <Skill name='HTML5' x='-20vw' y='10vw' />
                 <Skill name='CSS3' x='-29vw' y='0vw' />
                 <Skill name='Tailwind' x='20vw' y='13vw' />
                 <Skill name='NodeJS' x='0vw' y='-12vw' />
@@ -34,7 +37,7 @@ const Skills = () => {
                 <Skill name='Firebase' x='0vw' y='10vw' />
                 <Skill name='JavaScript' x='0vw' y='-20vw' />
                 <Skill name='MongoDB' x='22vw' y='-7vw' />
-                <Skill name='Mongoose' x='29vw' y='0vw' />
+                <Skill name='Mongoose' x='29vw' y='0vw' /> */}
             </div>
         </>
     );

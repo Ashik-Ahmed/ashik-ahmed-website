@@ -29,7 +29,7 @@ const aboutSchema = new Schema({
             }
         ]
     },
-    education: {
+    educations: {
         type: [
             {
                 type: String,

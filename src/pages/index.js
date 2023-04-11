@@ -8,8 +8,13 @@ import { LinkArrow } from '@/Components/Icons/Icons'
 import HireMe from '@/Components/HireMe/HireMe'
 import lightBulb from '../../public/images/svgs/miscellaneous_icons_1.svg'
 import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect'
+import Homepage from '../../database/models/home.model'
+import connectMongo from '../../database/connectMongo'
 
-export default function Home() {
+export default function Home({ homepage }) {
+
+  console.log(homepage);
+
   return (
     <>
       <Head>
@@ -57,4 +62,14 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+export async function getStaticProps() {
+  await connectMongo()
+  const homepage = await Homepage.find({})
+  return {
+    props: {
+      homepage: JSON.parse(JSON.stringify(homepage)),
+    },
+  };
 }

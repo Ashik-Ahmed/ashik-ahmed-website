@@ -8,6 +8,8 @@ import React from 'react';
 import project1 from '../../public/images/projects/crypto-screener-cover-image.jpg'
 import { motion } from 'framer-motion'
 import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect';
+import Projects from '../../database/models/project.model';
+import connectMongo from '../../database/connectMongo';
 
 const FramerImage = motion(Image)
 
@@ -73,7 +75,10 @@ const Project = ({ title, type, img, link, github }) => {
     )
 }
 
-const projects = () => {
+const projects = ({ projects }) => {
+
+    console.log(projects);
+
     return (
         <>
             <Head>
@@ -157,3 +162,15 @@ const projects = () => {
 };
 
 export default projects;
+
+
+
+export async function getStaticProps() {
+    await connectMongo()
+    const projects = await Projects.find({})
+    return {
+        props: {
+            projects: JSON.parse(JSON.stringify(projects)),
+        },
+    };
+}

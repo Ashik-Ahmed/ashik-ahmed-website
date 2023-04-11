@@ -9,7 +9,6 @@ import project1 from '../../public/images/projects/crypto-screener-cover-image.j
 import { motion } from 'framer-motion'
 import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect';
 import Projects from '../../database/models/project.model';
-import connectMongo from '../../database/connectMongo';
 
 const FramerImage = motion(Image)
 
@@ -166,7 +165,6 @@ export default projects;
 
 
 export async function getStaticProps() {
-    await connectMongo()
     const projects = await Projects.find({})
     return {
         props: {

@@ -9,7 +9,6 @@ import Skills from '@/Components/Skills/Skills';
 import Experience from '@/Components/Experience/Experience';
 import Education from '@/Components/Education/Education';
 import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect';
-import connectMongo from '../../database/connectMongo';
 import About from '../../database/models/about.model';
 
 const AnimatedMumbers = ({ value }) => {
@@ -110,8 +109,8 @@ export default about;
 
 
 export async function getStaticProps() {
-    await connectMongo()
     const about = await About.find({})
+    console.log(about);
     return {
         props: {
             about: JSON.parse(JSON.stringify(about)),

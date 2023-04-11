@@ -4,8 +4,10 @@ const aboutSchema = new Schema({
     title: String,
     satisfiedClients: String,
     projectsCompleted: String,
-    yearsOfExperience: Number,
-    biography: Array,
+    yearsOfExperience: String,
+    biography: {
+        type: Array
+    },
     skills: {
         type: [
             {

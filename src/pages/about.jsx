@@ -9,8 +9,8 @@ import Skills from '@/Components/Skills/Skills';
 import Experience from '@/Components/Experience/Experience';
 import Education from '@/Components/Education/Education';
 import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect';
-import About from '../../database/models/about.model';
 import connectMongo from '../../database/connectMongo';
+import About from '../../database/models/about.model';
 
 const AnimatedMumbers = ({ value }) => {
 
@@ -37,9 +37,8 @@ const AnimatedMumbers = ({ value }) => {
     return <span ref={ref}></span>
 }
 
-const about = ({ about }) => {
+const about = () => {
 
-    console.log(about);
 
     return (
         <>

@@ -13,7 +13,7 @@ import connectMongo from '../../database/connectMongo'
 
 export default function Home({ homepage }) {
 
-  console.log(homepage);
+  // console.log(homepage);
 
   return (
     <>

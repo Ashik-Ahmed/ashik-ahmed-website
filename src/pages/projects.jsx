@@ -77,7 +77,7 @@ const Project = ({ title, type, img, link, github }) => {
 
 const projects = ({ projects }) => {
 
-    console.log(projects);
+    // console.log(projects);
 
     return (
         <>

@@ -40,7 +40,7 @@ const AnimatedMumbers = ({ value }) => {
 const about = ({ about }) => {
 
     console.log(about);
-    const { title, satisfiedClients, projectsCompleted, yearsOfExperience, biography, skills, experiences, educationHistory } = about[0]
+    const { title, satisfiedClients, projectsCompleted, yearsOfExperience, biography, skills, experiences, certificates } = about[0]
 
     return (
         <>
@@ -111,7 +111,7 @@ const about = ({ about }) => {
 
                     <Skills skills={skills} />
                     <Experience experiences={experiences} />
-                    <Education educationHistory={educationHistory} />
+                    <Education certificates={certificates} />
                 </Layout>
             </main>
         </>

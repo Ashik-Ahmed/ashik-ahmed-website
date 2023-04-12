@@ -29,7 +29,7 @@ const aboutSchema = new Schema({
             }
         ]
     },
-    educationHistory: {
+    certificates: {
         type: [
             {
                 type: String,

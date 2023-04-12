@@ -22,7 +22,7 @@ const Details = ({ type, time, place, info }) => {
     </li>
 }
 
-const Education = ({ educationHistory }) => {
+const Education = ({ certificates }) => {
     const ref = useRef(null)
     const { scrollYProgress } = useScroll(
         {
@@ -39,12 +39,12 @@ const Education = ({ educationHistory }) => {
                     className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] md:left-[30px] xs:left-[20px]' />
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
                     {
-                        educationHistory && educationHistory.map((education, index) => <Details
+                        certificates && certificates.map((certificate, index) => <Details
                             key={index}
-                            type={education.type}
-                            time={education.time}
-                            place={education.place}
-                            info={education.info}
+                            type={certificate.type}
+                            time={certificate.time}
+                            place={certificate.place}
+                            info={certificate.info}
                         />)
                     }
 

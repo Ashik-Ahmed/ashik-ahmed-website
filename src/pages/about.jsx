@@ -110,8 +110,8 @@ const about = ({ about }) => {
                     </div>
 
                     <Skills skills={skills} />
+                    <Education educations={educations} />
                     <Experience experiences={experiences} />
-                    {/* <Education educations={educations} /> */}
                 </Layout>
             </main>
         </>

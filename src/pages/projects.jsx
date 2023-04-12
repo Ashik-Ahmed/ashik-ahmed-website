@@ -9,6 +9,7 @@ import project1 from '../../public/images/projects/crypto-screener-cover-image.j
 import { motion } from 'framer-motion'
 import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect';
 import Projects from '../../database/models/project.model';
+import connectMongo from '../../database/connectMongo';
 
 const FramerImage = motion(Image)
 
@@ -29,7 +30,7 @@ const FeaturedProject = ({ type, title, summary, img, link, githubClient, github
             <div className='w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6'>
                 <span className='text-primary font-medium text-xl dark:text-primaryDark xs:text-base'>{type}</span>
                 <Link href={link} target='_blank' className='hover:underline underline-offset-2'>
-                    <h2 className='my-2 w-full text-left text-3xl font-bold dark:text-light sm:text-sm'>{title}</h2>
+                    <h2 className='my-2 w-full text-left text-3xl font-bold dark:text-light lg:text-2xl'>{title}</h2>
                 </Link>
                 <p className='my-2 font-medium text-dark dark:text-light sm:text-sm'>{summary}</p>
                 <div className='w-full mt-2 flex items-center justify-between'>
@@ -172,6 +173,7 @@ export default projects;
 
 
 export async function getStaticProps() {
+    await connectMongo()
     const projects = await Projects.find({})
     return {
         props: {

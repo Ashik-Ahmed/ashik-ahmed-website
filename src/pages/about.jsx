@@ -10,6 +10,7 @@ import Experience from '@/Components/Experience/Experience';
 import Education from '@/Components/Education/Education';
 import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect';
 import About from '../../database/models/about.model';
+import connectMongo from '../../database/connectMongo';
 
 const AnimatedMumbers = ({ value }) => {
 
@@ -121,6 +122,7 @@ export default about;
 
 
 export async function getStaticProps() {
+    await connectMongo()
     const about = await About.find({})
     return {
         props: {

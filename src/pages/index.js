@@ -9,6 +9,7 @@ import HireMe from '@/Components/HireMe/HireMe'
 import lightBulb from '../../public/images/svgs/miscellaneous_icons_1.svg'
 import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect'
 import Homepage from '../../database/models/home.model'
+import connectMongo from '../../database/connectMongo'
 
 export default function Home({ homepage }) {
 
@@ -64,6 +65,7 @@ export default function Home({ homepage }) {
 }
 
 export async function getStaticProps() {
+  await connectMongo()
   const homepage = await Homepage.find({})
   return {
     props: {

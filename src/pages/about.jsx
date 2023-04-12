@@ -111,7 +111,7 @@ const about = ({ about }) => {
 
                     <Skills skills={skills} />
                     <Experience experiences={experiences} />
-                    <Education educations={educations} />
+                    {/* <Education educations={educations} /> */}
                 </Layout>
             </main>
         </>

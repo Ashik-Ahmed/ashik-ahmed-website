@@ -11,6 +11,7 @@ import Education from '@/Components/Education/Education';
 import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect';
 import About from '../../database/models/about.model';
 import connectMongo from '../../database/connectMongo';
+import Certificate from '../../database/models/education.model';
 
 const AnimatedMumbers = ({ value }) => {
 
@@ -37,10 +38,10 @@ const AnimatedMumbers = ({ value }) => {
     return <span ref={ref}></span>
 }
 
-const about = ({ about }) => {
+const about = ({ about, certificates }) => {
 
     console.log(about);
-    const { title, satisfiedClients, projectsCompleted, yearsOfExperience, biography, skills, experiences, certificates } = about[0]
+    const { title, satisfiedClients, projectsCompleted, yearsOfExperience, biography, skills, experiences } = about[0]
 
     return (
         <>
@@ -124,9 +125,11 @@ export default about;
 export async function getStaticProps() {
     await connectMongo()
     const about = await About.find({})
+    const certificates = await Certificate.find({})
     return {
         props: {
             about: JSON.parse(JSON.stringify(about)),
+            certificates: JSON.parse(JSON.stringify(certificates)),
         },
     };
 }

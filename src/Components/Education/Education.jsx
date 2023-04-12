@@ -23,6 +23,7 @@ const Details = ({ type, time, place, info }) => {
 }
 
 const Education = ({ certificates }) => {
+    console.log(certificates);
     const ref = useRef(null)
     const { scrollYProgress } = useScroll(
         {

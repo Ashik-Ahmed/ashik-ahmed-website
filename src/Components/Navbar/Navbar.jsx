@@ -63,19 +63,19 @@ const Navbar = () => {
                 </nav>
 
                 <nav className='flex items-center justify-center flex-wrap'>
-                    <motion.a href='/https://twitter.com' target='_blank'
+                    <motion.a href='https://github.com/Ashik-Ahmed' target='_blank'
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
                         className='w-6 mx-3 sm:mx-1'>
                         <GithubIcon />
                     </motion.a>
-                    <motion.a href='/' target='_blank'
+                    <motion.a href='https://www.linkedin.com/in/ashikahmed121' target='_blank'
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
                         className='w-6 mx-3 sm:mx-1'>
                         <LinkedInIcon />
                     </motion.a>
-                    <motion.a href='https://twitter.com' target='_blank'
+                    <motion.a href='https://twitter.com/AshikAh61134446' target='_blank'
                         whileHover={{ y: -2 }}
                         whileTap={{ scale: 0.9 }}
                         className='w-6 mx-3 sm:mx-1'>

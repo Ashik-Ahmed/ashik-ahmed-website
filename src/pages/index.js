@@ -30,14 +30,14 @@ export default function Home({ homepage }) {
         <Layout className='pt-0 md:pt-16 sm:pt-8'>
           <div className="flex items-center justify-between w-full lg:flex-col">
             <div className='w-1/2 md:w-full'>
-              <Image src='https://i.ibb.co/4t7RV4Y/ashik-ahmed-title-photo.png' width='720' height='520' alt='ashik-ahmed-photo' className='w-full h-auto lg:hidden md:inline-block md:w-full'
+              <Image src='https://i.ibb.co/34QCtw7/ashik-ahmed-photo.png' width='620' height='420' alt='ashik-ahmed-photo' className='w-full h-auto lg:hidden md:inline-block md:w-full'
                 priority
                 sizes="(max-width: 768px) 100vw,
               (max-width: 1200px) 50vw,
               50vw"
               />
             </div>
-            <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center'>
+            <div className='w-1/2 flex flex-col items-center self-center lg:w-full lg:text-center '>
               <AnimatedText text={title} className='!text-5xl !text-left xl:!text-5xl lg:!text-center lg:!text-7xl md:!text-6xl sm:!text-4xl' />
               <p className='my-4 text-base font-medium md:text-sm sm:text-xs'>
                 {description}

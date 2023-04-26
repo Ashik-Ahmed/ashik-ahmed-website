@@ -6,6 +6,6 @@ const homepageSchema = new Schema({
     resumeLink: String
 });
 
-const Homepage = models.Homepage || model('Homepage', homepageSchema);
+const Homepage = models?.Homepage || model('Homepage', homepageSchema);
 
 export default Homepage;

@@ -9,6 +9,6 @@ const educationSchema = new Schema({
     }
 });
 
-const Certificate = models.Certificate || model('Certificate', educationSchema);
+const Certificate = models?.Certificate || model('Certificate', educationSchema);
 
 export default Certificate;

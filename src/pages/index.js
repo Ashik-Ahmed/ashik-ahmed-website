@@ -10,6 +10,7 @@ import lightBulb from '../../public/images/svgs/miscellaneous_icons_1.svg'
 import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect'
 import Homepage from '../../database/models/home.model'
 import connectMongo from '../../database/connectMongo'
+import { getHomepageData } from '../../lib/helper'
 
 export default function Home({ homepage }) {
 
@@ -66,7 +67,9 @@ export default function Home({ homepage }) {
 
 export async function getStaticProps() {
   await connectMongo()
-  const homepage = await Homepage.find({})
+  // const homepage = await Homepage.find({})
+  const homepage = await getHomepageData()
+  console.log(homepage);
   return {
     props: {
       homepage: JSON.parse(JSON.stringify(homepage)),

@@ -16,6 +16,6 @@ const projectSchema = new Schema({
     }
 });
 
-const Projects = models.Projects || model('Projects', projectSchema);
+const Projects = models?.Projects || model('Projects', projectSchema);
 
 export default Projects;

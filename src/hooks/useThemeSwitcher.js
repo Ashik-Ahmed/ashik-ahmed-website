@@ -10,8 +10,8 @@ const useThemeSwitcher = () => {
         const userPref = window.localStorage.getItem("theme")
 
         const handleChange = () => {
-            if (userPref) {
-                let check = userPref === 'dark' ? 'dark' : 'light'
+            if (mode) {
+                let check = mode === 'dark' ? 'dark' : 'light'
                 setMode(check)
 
                 if (check === 'dark') {

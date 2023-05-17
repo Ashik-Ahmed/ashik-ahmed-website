@@ -101,7 +101,7 @@ const projects = ({ projects }) => {
 
             <TransitionEffect />
 
-            <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light mt-16'>
+            <main className='w-full mb-16 flex flex-col items-center justify-center dark:text-light mt-16 sm:mt-0'>
                 <Layout className='pt-16'>
                     <AnimatedText text='Awesome Full Stack Projects!' className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
 

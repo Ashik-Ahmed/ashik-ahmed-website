@@ -52,7 +52,7 @@ const about = ({ about, certificates }) => {
             </Head>
 
             <TransitionEffect />
-            <main className='flex flex-col items-center justify-center w-full dark:text-light'>
+            <main className='flex flex-col items-center justify-center w-full dark:text-light mt-16'>
                 <Layout className='pt-16'>
                     <AnimatedText text={title} className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
                     <div className='grid w-full grid-cols-8 gap-16 sm:gap-8'>

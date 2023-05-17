@@ -95,7 +95,7 @@ const projects = ({ projects }) => {
     return (
         <>
             <Head>
-                <title>Projects | MERN stack projects</title>
+                <title>Projects | Full Stack projects</title>
                 <meta name='description' content='ashik ahmed web developer. ashik ahmed full-stack developer. mern stack projects'></meta>
             </Head>
 

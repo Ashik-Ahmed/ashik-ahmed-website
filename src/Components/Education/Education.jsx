@@ -32,7 +32,7 @@ const Education = ({ certificates }) => {
         }
     )
     return (
-        <div className='my-64'>
+        <div className='mt-64'>
             <h2 className='font-bold text-7xl mb-32 w-full text-center md:text-5cl xs:text-3xl md:mb-16'>Education</h2>
             <div ref={ref} className='w-[75%] lg:w-[90%] md:w-full mx-auto relative'>
                 <motion.div

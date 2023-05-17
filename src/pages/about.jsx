@@ -12,6 +12,7 @@ import TransitionEffect from '@/Components/TransitionEffect/TransitionEffect';
 import About from '../../database/models/about.model';
 import connectMongo from '../../database/connectMongo';
 import Certificate from '../../database/models/education.model';
+import Contact from '@/Components/Contact/Contact';
 
 const AnimatedMumbers = ({ value }) => {
 
@@ -113,6 +114,7 @@ const about = ({ about, certificates }) => {
                     <Skills skills={skills} />
                     <Experience experiences={experiences} />
                     <Education certificates={certificates} />
+                    <Contact />
                 </Layout>
             </main>
         </>

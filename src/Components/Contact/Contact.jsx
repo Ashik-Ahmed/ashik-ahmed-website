@@ -40,7 +40,7 @@ const Contact = () => {
                     </div >
                     <div className='flex items-center gap-2 font-medium w-full md:text-sm'>
                         <FaLinkedin />
-                        <Link href='https://www.linkedin.com/in/ashikahmed121/'>linkedin.com/in/ashikahmed121/</Link>
+                        <Link href='https://www.linkedin.com/in/ashik-ahmed-web-dev'>linkedin.com/in/ashik-ahmed-web-dev</Link>
                     </div >
                     <div className='flex items-center gap-2 font-medium w-full md:text-sm'>
                         <FaFacebook />

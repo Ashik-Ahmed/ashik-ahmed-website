@@ -8,8 +8,8 @@ const Contact = () => {
     return (
         <div className='my-64 mx-auto'>
             <h2 className='font-bold text-7xl mb-32 w-full text-center md:text-5cl xs:text-3xl md:mb-16'>Contact Me</h2>
-            <div className='w-[75%] lg:w-[90%] md:w-full mx-auto relative flex xs:block justify-center xs:divide-x-0 divide-x-4 gap-8'>
-                <div className='ml-4 xs:ml-2 sm:pl-4 pl-16'>
+            <div className='w-[80%] lg:w-[90%] md:w-full mx-auto relative flex xs:block justify-center xs:divide-x-0 divide-x-4 gap-8'>
+                <div className='ml-4 xs:ml-2 sm:pl-4 pl-12'>
                     <p className='text-xl font-bold mb-2'>Ping Me:</p>
                     <div className='flex items-center gap-2 font-medium w-full md:text-sm'>
                         <FiPhoneCall />
@@ -32,7 +32,7 @@ const Contact = () => {
                         <b>OR</b>
                     </Divider>
                 </div> */}
-                <div className='ml-4 xs:ml-2 sm:pl-4 pl-16 sm:mt-4'>
+                <div className='ml-4 xs:ml-2 sm:pl-4 pl-12 sm:mt-4'>
                     <p className='text-xl font-bold mb-2'>Social Connect:</p>
                     <div className='flex items-center gap-2 font-medium w-full md:text-sm'>
                         <FaGithub />
